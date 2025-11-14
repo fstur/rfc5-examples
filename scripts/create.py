@@ -24,9 +24,9 @@ path = "./examples/example1.zarr"
 data = skimage.data.cells3d()
 data.shape
 
-dz = 3
-dy = 2
-dx = 2
+dz = 0.5
+dy = 0.2
+dx = 0.2
 pixel_unit = "um"
 ds_factor = 2
 
@@ -81,8 +81,6 @@ transform_physical_to_world = Rotation(
     input="physical",
     output="world",
 )
-pprint(transform_physical_to_world)
-
 
 ome_zarr_image = Image.new(
     array_specs=array_specs,
@@ -100,7 +98,6 @@ ome_zarr_image = Image.new(
     coord_transforms=[transform_physical_to_world],
     coord_systems=[world_coord_system],
 )
-pprint(ome_zarr_image)
 
 if os.path.exists(path):
     shutil.rmtree(path)
