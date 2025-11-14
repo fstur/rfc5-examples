@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rfc5-examples"
+version = "0.1.0"
+description = "Examples for RFC5 OME-Zarr specifications"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "numpy",
+    "zarr",
+    "pydantic-zarr",
+    "rich",
+    "scikit-image",
+    "ome-zarr-models @ git+https://github.com/ome-zarr-models/ome-zarr-models-py@rfc5",
+    "pooch",
+]
+authors = [
+    {name = "Flurin Sturzenegger", email = "st.flurin@gmail.com"}
+]
+
+[project.optional-dependencies]
+dev = []
+
+[tool.setuptools]
+packages = ["examples", "scripts"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311']
