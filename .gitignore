@@ -132,12 +132,3 @@ dmypy.json
 # OS
 .DS_Store
 Thumbs.db
-
-# Project specific
-examples/
-*.zarr
-*.h5
-*.hdf5
-*.n5
-*.tif
-*.tiff
